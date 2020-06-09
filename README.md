@@ -33,7 +33,7 @@ Displays bibentries of the type `type`. For example, `(:bibauth book:)` displays
 ```
 (:bibauth author type:)
 ```
-Displays bibentries by `author' with the optional `type`. For example, `(:bibauth Doe phdthesis:)` displays the PhD thesis of Doe.
+Displays bibentries by `author` and the optional parameter `type`. For example, `(:bibauth Doe phdthesis:)` displays the PhD thesis of Doe.
 
 ```
 (:biblast author number:)
