@@ -8,8 +8,8 @@ A bibliography recipe for PmWiki
 # Setup
 To use this plugin, it must be enabled in PmWiki's `local/config.php` file. It can be enabled by including the following lines:
 ```
-$BibtexBib = 'path/to/your/bib.bib';
 include_once('cookbook/bibbrowser.php');
+BibLoad('path/to/your/bib.bib');
 ```
 
 # Usage

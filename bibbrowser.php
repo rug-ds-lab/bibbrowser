@@ -6,7 +6,6 @@ $_GET['library']=1;
 require('bibtexbrowser.php');
 
 $db = new BibDataBase();
-$bib = $BibtexBib;
 
 Markup('bibtexbrowseyear',    'fulltext','/\\(:bibyear (\\d{4}):\\)/',                "BibBrowseByYear");
 Markup('bibtexbrowserel',     'fulltext','/\\(:bibyear ([-+]?[0-9]{1,2}):\\)/',       "BibBrowseByYearRel");
@@ -16,14 +15,13 @@ Markup('bibtexbrowseauthtype','fulltext','/\\(:bibauth (\\S+) (\\S+):\\)/',     
 Markup('bibtexbrowsetype',    'fulltext','/\\(:bibtype (\\S+):\\)/',                  "BibBrowseByType");
 
 
-function load($bib) {
+function BibLoad($bib) {
 	global $db;
 	$db->load($bib);
 }
 
 function BibBrowseByYear($m) {
-	global $db, $bib;
-	load($bib);
+	global $db;
 	
 	$query = array('year'=>$m[1]);
 	$entries = $db->multisearch($query);
@@ -33,8 +31,7 @@ function BibBrowseByYear($m) {
 }
 
 function BibBrowseByYearRel($m) {
-	global $db, $bib;
-	load($bib);
+	global $db;
 	
 	$query = array('year'=>date("Y") + $m[1]);
 	$entries = $db->multisearch($query);
@@ -44,8 +41,7 @@ function BibBrowseByYearRel($m) {
 }
 
 function BibBrowseByLast($m) {
-	global $db, $bib;
-	load($bib);
+	global $db;
 	
 	$query = array('author'=>$m[1]);
 	$entries = $db->multisearch($query);
@@ -57,8 +53,7 @@ function BibBrowseByLast($m) {
 }
 
 function BibBrowseByAuth($m) {
-	global $db, $bib;
-	load($bib);
+	global $db;
 	
 	$query = array('author'=>$m[1],
 				   'type'=>(isset($m[2]) ? $m[2] : '.*'));
@@ -69,8 +64,7 @@ function BibBrowseByAuth($m) {
 }
 
 function BibBrowseByType($m) {
-	global $db, $bib;
-	load($bib);
+	global $db;
 	
 	$query = array('type'=>$m[1]);
 	$entries = $db->multisearch($query);
