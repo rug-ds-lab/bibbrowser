@@ -132,7 +132,7 @@ function getTypeWeight($e) {
 		case "unpublished":
 			$r = 100;
 			break;
-	    default:
+	    	default:
 			$r = 100;
 	}
 	
