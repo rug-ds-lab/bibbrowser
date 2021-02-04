@@ -93,47 +93,47 @@ function academicOrder($a, $b) {
 }
 
 function getTypeWeight($e) {
-	$r = 6;
+	$r = 100;
 	
 	switch ($e->getType()) {
 		case "book":
 			$r = 1;
 			break;
-		case "article":
-			$r = 3;
-			break;
-		case "booklet":
-			$r = 1;
-			break;
-		case "inbook":
-			$r = 1;
-			break;
-		case "incollection":
-			$r = 4;
-			break;
-		case "inproceedings":
-			$r = 4;
-			break;
-		case "manual":
-			$r = 5;
-			break;
-		case "mastersthesis":
-			$r = 5;
-			break;
 		case "phdthesis":
-			$r = 1;
+			$r = 5;
 			break;
 		case "proceedings":
-			$r = 2;
+			$r = 10;
+			break;
+		case "booklet":
+			$r = 20;
+			break;
+		case "inbook":
+			$r = 30;
+			break;
+		case "article":
+			$r = 40;
+			break;
+		case "incollection":
+			$r = 45;
+			break;
+		case "inproceedings":
+			$r = 50;
+			break;
+		case "manual":
+			$r = 90;
+			break;
+		case "mastersthesis":
+			$r = 90;
 			break;
 		case "techreport":
-			$r = 5;
+			$r = 90;
 			break;
 		case "unpublished":
-			$r = 6;
+			$r = 100;
 			break;
 	    default:
-			$r = 6;
+			$r = 100;
 	}
 	
 	return $r;
