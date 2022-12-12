@@ -44,4 +44,7 @@ Displays bibentries by `author` and the optional parameter `type`. For example, 
 ```
 (:biblast author number:)
 ```
-Displays `number` of bibentries by `author`. For example, `(:bibylast Doe 5:)` displays five entries by Doe. Note that entries are sorted by the order of the bib file.
+Displays `number` of bibentries by `author`. For example, `(:bibylast Doe 5:)` displays five entries by Doe.
+
+# Sorting
+Sorting is automatic by year, type (academic order), month, and finally author.
