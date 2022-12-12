@@ -19,6 +19,11 @@ Below is the list of available commands. Remember to always put a line feed afte
 (:bib field="value" field2="value" ... :)
 ```
 
+Displays bibentries with values for the given fields, e.g., `(:bib author="Doe" type="Book" year="2000":) ` list books from the year 2000 by Doe.
+
+
+## Depricated
+
 The below commands are depricated but maintained for compatibility.
 
 ```
