@@ -16,6 +16,12 @@ BibLoad('path/to/your/bib.bib');
 Below is the list of available commands. Remember to always put a line feed after each command.
 
 ```
+(:bib field="value" field2="value" ... :)
+```
+
+The below commands are depricated but maintained for compatibility.
+
+```
 (:bibyear year:)
 ```
 Displays bibentries from the year `year`. For example, `(:bibyear 2020:)` displays all entries from the year 2020.
