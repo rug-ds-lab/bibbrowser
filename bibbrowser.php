@@ -116,8 +116,7 @@ function bibYearRel($m) {
 }
 
 function bibLast($m) {
-    $entries = search(array('author'=>$m[1]));
-    $entries = array_slice($entries, 0, $m[2]);
+    $entries = search(array('author'=>$m[1], 'limit'=>$m[2]));
     return Keep(bibBrowsePrint($entries));
 }
 
@@ -156,9 +155,19 @@ function query($m) {
 function search($query) {
     global $db;
 
-    $entries = $db->multisearch($query);
+    $limit = $query['sort'] ?? 0;
+    unset($query['limit']);
+
     $sort = BIBBROWSE_SORT[$query['sort'] ?? null] ?? BIBBROWSE_DEFAULT_SORT;
+    unset($query['sort']);
+
+    $entries = $db->multisearch($query);
     uasort($entries, $sort);
+
+    if ($limit > 0) {
+        $partioned_entries = array_chunk($entries, $limit, true);
+        $entries = $partioned_entries[0];
+    }
 
     return $entries;
 }

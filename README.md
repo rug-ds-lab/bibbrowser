@@ -16,10 +16,11 @@ BibLoad('path/to/your/bib.bib');
 Below is the list of available commands. Remember to always put a line feed after each command.
 
 ```
-(:bib field="value" field2="value" ... :)
+(:bib field="value" field2="value" ... limit="x":)
 ```
 
-Displays bibentries with values for the given fields, e.g., `(:bib author="Doe" type="Book" year="2000":) ` list books from the year 2000 by Doe.
+Displays an x number of bibentries with values for the given fields, e.g., `(:bib author="Doe" type="Book" year="2000":) ` list books from the year 2000 by Doe.
+Limit is optional.
 
 
 ## Depricated
