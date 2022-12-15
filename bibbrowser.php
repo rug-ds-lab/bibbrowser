@@ -155,7 +155,7 @@ function query($m) {
 function search($query) {
     global $db;
 
-    $limit = $query['sort'] ?? 0;
+    $limit = $query['limit'] ?? 0;
     unset($query['limit']);
 
     $sort = BIBBROWSE_SORT[$query['sort'] ?? null] ?? BIBBROWSE_DEFAULT_SORT;
