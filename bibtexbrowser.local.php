@@ -37,7 +37,7 @@ function DsBibliographyStyle($bibentry) {
 
   // now the book title
   $booktitle = '';
-  if ($type=="inproceedings") {
+  if ($type=="inproceedings" || $type=="conference") {
       $booktitle = __('In').' '.'<span itemprop="isPartOf">'.$bibentry->getField(BOOKTITLE).'</span>'; }
   if ($type=="incollection") {
       $booktitle = __('Chapter in').' '.'<span itemprop="isPartOf">'.$bibentry->getField(BOOKTITLE).'</span>';}
