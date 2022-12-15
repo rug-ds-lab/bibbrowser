@@ -14,8 +14,8 @@ function DsBibliographyStyle($bibentry) {
   // title
   // usually in bold: .bibtitle { font-weight:bold; }
   $title = '<span class="bibtitle"  itemprop="name">'.$title.'</span>';
-  if ($bibentry->hasField('url')) $title = ' <a target="_blank" href="'.$bibentry->getField('url').'">'.$title.'</a>';
-  elseif ($bibentry->hasField('doi')) $title = ' <a target="_blank" href="https://doi.org/'.$bibentry->getField('doi').'">'.$title.'</a>';
+  if ($bibentry->hasField('doi')) $title = ' <a target="_blank" href="https://doi.org/'.$bibentry->getField('doi').'">'.$title.'</a>';
+  elseif ($bibentry->hasField('url')) $title = ' <a target="_blank" href="'.$bibentry->getField('url').'">'.$title.'</a>';
 
   $coreInfo = $title;
 
